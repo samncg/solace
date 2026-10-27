@@ -1,0 +1,53 @@
+PCB statistics report
+=====================
+- Date: 28/10/2026 2:04:39 AM
+- Project: main
+- Board name: main
+
+Board
+-----
+- Width: 100.0000 mm
+- Height: 64.0000 mm
+- Area: 6392.261 mm²
+- Front copper area: 0.00 mm²
+- Back copper area: 0.00 mm²
+- Min track clearance: 2147.4836 mm
+- Min track width: 2147.4836 mm
+- Min drill diameter: 2147.4836 mm
+- Board stackup thickness: 1.6200 mm
+
+- Front footprint area: 0.00 mm²
+- Back footprint area: 0.00 mm²
+- Front component density: 0.00 %
+- Back component density: 0.00 %
+Pads
+----
+- Through hole: 0
+- SMD: 0
+- Connector: 0
+- NPTH: 0
+- Castellated: 0
+- Press-fit: 0
+
+Vias
+----
+- Through vias: 0
+- Blind vias: 0
+- Buried vias: 0
+- Micro vias: 0
+
+Components
+----------
+
+|              | Front Side | Back Side | Total |
+|--------------|------------|-----------|-------|
+|THT:          |          0 |         0 |     0 |
+|SMD:          |          0 |         0 |     0 |
+|Unspecified:  |          0 |         0 |     0 |
+|Total:        |          0 |         0 |     0 |
+
+Drill holes
+-----------
+
+| Count | Shape | X Size | Y Size | Plated | Via/Pad | Start Layer | Stop Layer |
+|-------|-------|--------|--------|--------|---------|-------------|------------|

@@ -35,7 +35,7 @@ KICAD = r"C:\Program Files\KiCad\10.0\bin\kicad-cli.exe"
 DATE = "2026-10-28"
 DOC_ID = "SL-HW-001"
 REV = "B"
-COMMIT = "ff902b4"
+COMMIT = "527f3d5"
 
 # ---------------------------------------------------------------- palette
 NAVY = colors.HexColor("#16324F")
@@ -462,15 +462,17 @@ def build_story():
                    ["Revision", REV],
                    ["Date", DATE],
                    ["Status", "Schematic complete and netlist-verified. No PCB layout."],
-                   ["Source baseline", "main.kicad_sch, working tree at " + DATE + " (HEAD " + COMMIT + ")"],
+                   ["Source baseline", "main.kicad_sch, working tree at " + DATE + " (HEAD " + COMMIT + " plus review edits)"],
                    ["EDA tool", "KiCad 10.0"],
-                   ["Revision history", "Rev A - first issue of this document."]],
+                   ["Revision history", "Rev B - see revision history below."]],
                   [130, CW - 130]))
     st.append(Spacer(1, 10))
     st.append(P("Revision history", "h2"))
     st.append(TBL([["Rev", "Date", "Description", "By"],
                    ["B", DATE, "Adds the PCF8563TS real-time clock with CR1220 backup and an I2S MEMS "
-                    "microphone. Haptic pads replaced by connector J4. Verification figures refreshed.", "-"],
+                    "microphone. Haptic pads replaced by connector J4. Verification figures refreshed. "
+                    "Review pass adds mic / button pull-ups, haptic-trigger and LCD-control bias, and "
+                    "reduces C14 to 1 uF.", "-"],
                    ["A", "2026-10-27", "Initial issue. Schematic complete: 14-pin display, load sharing, "
                     "firmware charger control, external thermistor.", "-"]],
                   [34, 62, CW - 96 - 34 - 62 + 96 - 96, 96]))
@@ -693,7 +695,7 @@ def build_story():
                    ["U16", "RP2350B, QFN-80", "Host MCU", "Dual Cortex-M33, external QSPI boot"],
                    ["U17", "W25Q128JVSIQ", "Program and asset storage", "128 Mbit = 16 MB, QSPI, chip select 0"],
                    ["U1", "APS6404L-3SQR-SN", "PSRAM", "64 Mbit = 8 MB, QSPI, chip select 1 on GPIO0"],
-                   ["U18", "ABM8-272-T3", "Main crystal", "15 pF load caps C61/C62, 1 k series R23"],
+                   ["U18", "ABM8-272-T3", "12 MHz main crystal", "15 pF load caps C61/C62, 1 k series R23"],
                    ["L10", "AOTA-B201610S3R3-101-T", "Core buck inductor", "3.3 uH, polarised - observe the dot"]],
                   [36, 130, 118, CW - 284]))
     st.append(Spacer(1, 6))
@@ -755,12 +757,12 @@ def build_story():
     st.append(H1("7  Audio"))
     st.append(TBL([["Ref", "Device", "Function", "Notes"],
                    ["U6", "PCM5102A", "I2S DAC, 2.1 Vrms line output", "SCK tied low; clock derived from BCK"],
-                   ["U11", "TPA6132A2", "Capless headphone amplifier", "Integrated charge pump, gain straps to 0 dB"],
+                   ["U11", "TPA6132A2", "Capless headphone amplifier", "Integrated charge pump, gain straps to -6 dB"],
                    ["CN1", "PJ-342", "3.5 mm TRS jack", "Switch contacts unused"],
                    ["L8", "Ferrite", "AUDIO_3V3 to amplifier VDD", ""]],
                   [36, 96, 128, CW - 260]))
     st.append(Spacer(1, 6))
-    st.append(P("Signal path: RP2350 I2S (BCK GPIO2, DIN GPIO3, LRCK GPIO4) into the DAC; DAC outputs are "
+    st.append(P("Signal path: RP2350 I2S (BCK GPIO3, DIN GPIO2, LRCK GPIO4) into the DAC; DAC outputs are "
                 "AC-coupled through 1 uF into the amplifier's differential inputs; amplifier outputs drive "
                 "the jack directly. XSMT (GPIO42) and the amplifier enable (GPIO43) both carry 10 kohm "
                 "pull-downs, so the chain starts muted and the amplifier starts off."))
@@ -786,10 +788,10 @@ def build_story():
                    ["32 ohm headphones", "100 dB/mW", "12 mW", "about 111 dB SPL"],
                    ["300 ohm headphones", "98 dB/mW", "1.3 mW", "about 99 dB SPL"]],
                   [110, 90, 130, CW - 330]))
-    st.append(P("The DAC delivers 2.1 Vrms, which is well above the amplifier's input capability at 0 dB gain, "
-                "so digital volume must be limited to roughly minus 10 dB to avoid clipping into 16 to 32 ohm "
-                "loads. The gain straps (G0/G1 to ground) select the lowest gain setting; verify against the "
-                "amplifier's gain table if this is changed.", "cap"))
+    st.append(P("The DAC delivers 2.1 Vrms. With the gain straps (G0/G1 to ground) the TPA6132A2 runs at "
+                "its lowest setting, -6 dB, so the output is about 1.05 Vrms - close to its maximum swing on a "
+                "3.3 V rail. Digital volume should still be capped a few dB to avoid clipping into 16 to 32 ohm "
+                "loads. Per the gain table, G0 high with G1 low selects 0 dB.", "cap"))
 
     # ================================================== 8 haptics
     st.append(H1("8  Haptics"))
@@ -798,7 +800,8 @@ def build_story():
                    ["Actuator", "J4 2-pin header, nets HAPTIC_A / HAPTIC_B"],
                    ["Control", "EN on GPIO1, IN/TRIG on GPIO5"],
                    ["Local bulk", "C64 22 uF at the driver supply"],
-                   ["Enable default", "R43 100 kohms pull-down - driver off until firmware configures it"]],
+                   ["Enable default", "R43 100 kohms pull-down on EN - driver off until firmware configures it"],
+                   ["Trigger default", "R53 100 kohms pull-down on IN/TRIG - no trigger while GPIO5 floats"]],
                   [110, CW - 110]))
     st.append(P("Drive voltage equals +3V3, so the actuator must be a 2 to 3 V LRA or ERM. A 5 V ERM would "
                 "require a boost converter that is not fitted."))
@@ -814,7 +817,7 @@ def build_story():
                    ["TCA9554 expander", "U14", "0x20", "A0-A2 tied low; INT to GPIO20"],
                    ["DRV2605L haptics", "U7", "0x5A", "REG cap C49 1 uF"],
                    ["PCF8563TS real-time clock", "U13", "0x51", "32.768 kHz crystal, coin-cell backup"],
-                   ["J1 expansion header", "J1", "-", "4-pin: +3V3, GND, SCL, SDA"]],
+                   ["J1 expansion header", "J1", "-", "4-pin: GND, +3V3, SCL, SDA"]],
                   [130, 40, 58, CW - 228]))
 
     st.append(H2("9.2  Buttons"))
@@ -841,7 +844,7 @@ def build_story():
                    ["Device", "PCF8563TS, TSSOP-8, I2C address 0x51 (U13)"],
                    ["Timebase", "Y2, 32.768 kHz, load caps C69 / C70 15 pF"],
                    ["Supply", "RTC_VDD, diode-OR of +3V3 and the backup cell"],
-                   ["Backup", "BT1 CR1220 holder via D3 BAT54C; C71 100 nF"],
+                   ["Backup", "U19 KH-CR1220-2 (C5365933) via D3 BAT54C; C71 100 nF"],
                    ["Unused outputs", "INT and CLKOUT left open"]],
                   [110, CW - 110]))
     st.append(P("D3 is a dual common-cathode Schottky wired as a diode-OR: anode 1 to +3V3, anode 2 to "
@@ -858,7 +861,8 @@ def build_story():
                    ["Device", "ICS-43434 I2S MEMS microphone (U15)"],
                    ["Data path", "MIC_BCLK GPIO23, MIC_WS GPIO24, MIC_DATA GPIO25"],
                    ["Channel select", "LR tied to GND (left channel)"],
-                   ["Decoupling", "C72 100 nF and C73 1 uF at the supply pin"]],
+                   ["Decoupling", "C72 100 nF and C73 1 uF at the supply pin"],
+                   ["Data line", "R50 100 kohms pull-down on MIC_DATA (line discharge)"]],
                   [110, CW - 110]))
     st.append(P("The microphone is given its own I2S pins rather than sharing the DAC's bus. That spends "
                 "three GPIOs that were otherwise free, but it keeps capture and playback independent, so "
@@ -888,8 +892,8 @@ def build_story():
     gpio = [
         ("0", "77", "PSRAM chip select", "XIP_CS1n"),
         ("1", "78", "Haptic enable", "DRV2605L EN"),
-        ("2", "79", "I2S bit clock", "PCM5102A BCK"),
-        ("3", "80", "I2S data", "PCM5102A DIN"),
+        ("2", "79", "I2S data (DIN)", "PCM5102A DIN"),
+        ("3", "80", "I2S bit clock (BCK)", "PCM5102A BCK"),
         ("4", "1", "I2S word clock", "PCM5102A LRCK"),
         ("5", "2", "Haptic trigger", "DRV2605L IN/TRIG"),
         ("6", "3", "LCD backlight PWM", "PWM3 A"),
@@ -974,7 +978,7 @@ def build_story():
 
     # ================================================== 14 limitations
     st.append(H1("14  Limitations and open items"))
-    st.append(P("The following are known as of revision A. The first four affect behaviour and must be "
+    st.append(P("The following are known as of revision B. The first four affect behaviour and must be "
                 "understood before the first prototype.", "lead"))
     st.append(TBL([["#", "Item", "Impact", "Status"],
                    ["1", "Backlight cannot reach rated brightness", "Output about one third to three quarters of nominal, panel to panel variation", "Accepted - see 6.3"],
@@ -984,21 +988,19 @@ def build_story():
                    ["5", "PCB outline only", "main.kicad_pcb holds the 100 x 64 mm outline; no placement or routing", "In progress"],
                    ["6", "FPC contact side unverified", "U9 is bottom-contact; wrong side would be unassemblable", "Verify with sample"],
                    ["7", "Jack tip/ring unverified", "Possible left / right swap", "Verify by continuity"],
-                   ["8", "Crystal frequency unrecorded", "Must match the firmware's assumption; USB boot expects 12 MHz", "Confirm part"],
-                   ["9", "No SD card detect", "Insertion must be inferred in software", "Accepted"],
-                   ["10", "No jack ESD protection", "Consumer-product robustness", "Consider"],
-                   ["11", "Fixed 500 mA charge current", "Requires a cell of at least about 1000 mAh", "Accepted"],
-                   ["12", "ERC reports 34 findings", "Unconnected GPIOs and power-flag warnings; no electrical errors", "Reviewed, accepted"],
-                   ["13", "BT1 footprint unassigned", "The CR1220 SMT holder must be chosen before layout", "User to select"],
-                   ["14", "No LCSC part numbers for Y2 and BT1", "Sourcing must be completed before an order can be placed", "User to select"]],
+                   ["8", "No SD card detect", "Insertion must be inferred in software", "Accepted"],
+                   ["9", "No jack ESD protection", "Consumer-product robustness", "Consider"],
+                   ["10", "Fixed 500 mA charge current", "Requires a cell of at least about 1000 mAh; system load can exceed a 500 mA USB-C source", "Accepted"],
+                   ["11", "ERC reports 35 findings", "Unconnected NC pins, power-flag and pin-type annotations; no electrical errors", "Reviewed, accepted"],
+                   ["12", "No LCSC part number for Y2", "Sourcing must be completed before an order can be placed", "User to select"]],
                   [20, 118, CW - 20 - 118 - 86, 86]))
 
     st.append(H2("14.1  Required before prototype"))
     st.extend(BULLETS([
-        "Assign a footprint and LCSC part number for BT1 (CR1220 SMT holder).",
+        "Assign an LCSC part number for Y2 (32.768 kHz crystal).",
         "Lay out the PCB, observing the checklist in section 16.",
         "Implement the low-voltage shutdown at 3.5 V and the over-temperature charge cut in firmware.",
-        "Confirm the FPC contact side, the jack tip / ring assignment and the crystal frequency.",
+        "Confirm the FPC contact side and the jack tip / ring assignment.",
     ]))
 
     # ================================================== 15 verification
@@ -1007,13 +1009,14 @@ def build_story():
     st.append(P("The schematic is checked mechanically rather than by inspection: the netlist is regenerated "
                 "from source and compared against the previous baseline, then the component set is compared "
                 "against the BOM."))
+    nbom = sum(int(q) for _, q, _, _ in read_bom())
     st.append(TBL([["Check", "Result"],
                    ["Netlist components", str(ncomp)],
-                   ["BOM references", "153"],
+                   ["BOM references", str(nbom)],
                    ["Nets", str(nnets)],
                    ["Pins appearing in more than one net", "0"],
-                   ["ERC findings", "34 (unconnected GPIOs and power-flag warnings) - all reviewed as benign"],
-                   ["Netlist / BOM consistency", "Exact match: the same 153 references in both"]],
+                   ["ERC findings", "35 (unconnected NC pins, power-flag and pin-type annotations) - all reviewed as benign"],
+                   ["Netlist / BOM consistency", "Exact match: the same %d references in both" % nbom]],
                   [170, CW - 170]))
     st.append(Spacer(1, 8))
     st.append(P("Method. After every schematic edit the netlist is exported and compared net by net with the "
@@ -1037,7 +1040,7 @@ def build_story():
         "Place J2, R46 and C68 near the battery connector, with the NTC bonded to the cell rather than the board.",
         "Place C63 (1 uF) at the display connector VDD pin.",
         "Place Y2 and its 15 pF load capacitors directly at PCF8563 pins 1 and 2; keep those traces short and clear of the SDIO clock and QSPI bus.",
-        "Keep D2, C71 and BT1 together at the RTC supply pin, and keep the coin-cell holder away from the board edge.",
+        "Keep D3, C71 and U19 together at the RTC supply pin, and keep the coin-cell holder away from the board edge.",
         "Mount the MEMS microphone so its acoustic port aligns with an enclosure opening; keep C72 and C73 within a few millimetres of the supply pin and do not route signals beneath the port.",
         "The ICS-43434 is a bottom-port microphone: the acoustic path is through the 0.4 mm hole in the land pattern, so the enclosure aperture must open onto the underside of the board or a gasket must bridge it.",
         "Keep the AUDIO_3V3 ferrites close to the DAC and amplifier pins.",

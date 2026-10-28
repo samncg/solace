@@ -1,0 +1,733 @@
+=== C10  [1uF]  Capacitor_SMD:C_0603_1608Metric
+    1                    GND
+    2                    VSYS
+=== C11  [1uF]  Capacitor_SMD:C_0603_1608Metric
+    1                    +3V3
+    2                    GND
+=== C12  [0.1uF]  Capacitor_SMD:C_0603_1608Metric
+    1                    Net-(U6-AVDD)
+    2                    GND
+=== C13  [10uF]  Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A
+    1                    Net-(U6-AVDD)
+    2                    GND
+=== C14  [10uF]  Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A
+    1                    Net-(U6-LDOO)
+    2                    GND
+=== C15  [0.1uF]  Capacitor_SMD:C_0603_1608Metric
+    1                    Net-(U6-LDOO)
+    2                    GND
+=== C16  [0.1uF]  Capacitor_SMD:C_0603_1608Metric
+    1                    Net-(U6-DVDD)
+    2                    GND
+=== C17  [10uF]  Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A
+    1                    Net-(U6-DVDD)
+    2                    GND
+=== C18  [10uF]  Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A
+    1                    Net-(U6-CPVDD)
+    2                    GND
+=== C19  [0.1uF]  Capacitor_SMD:C_0603_1608Metric
+    1                    Net-(U6-CPVDD)
+    2                    GND
+=== C20  [2.2uF]  Capacitor_SMD:C_0603_1608Metric
+    1                    GND
+    2                    Net-(U6-VNEG)
+=== C21  [2.2uF]  Capacitor_SMD:C_0603_1608Metric
+    1                    Net-(U6-CAPP)
+    2                    Net-(U6-CAPM)
+=== C22  [10uF]  Capacitor_SMD:C_0805_2012Metric
+    1                    GND
+    2                    +3V3
+=== C23  [1uF]  Capacitor_SMD:C_0603_1608Metric
+    1                    Net-(U11-INL-)
+    2                    Net-(C23-Pad2)
+=== C24  [10uF]  Capacitor_SMD:C_0805_2012Metric
+    1                    GND
+    2                    +3V3
+=== C25  [0.1uF]  Capacitor_SMD:C_0603_1608Metric
+    1                    RP2354_GPIO40
+    2                    GND
+=== C26  [0.1uF]  Capacitor_SMD:C_0603_1608Metric
+    1                    GND
+    2                    +3V3
+=== C27  [1uF]  Capacitor_SMD:C_0603_1608Metric
+    1                    GND
+    2                    AUDIO_3V3
+=== C28  [10uF]  Capacitor_SMD:C_0805_2012Metric
+    1                    AUDIO_3V3
+    2                    GND
+=== C29  [1uF]  Capacitor_SMD:C_0603_1608Metric
+    1                    VSYS
+    2                    GND
+=== C30  [10uF]  Capacitor_SMD:C_0805_2012Metric
+    1                    +3V3
+    2                    GND
+=== C31  [1uF]  Capacitor_SMD:C_0603_1608Metric
+    1                    +3V3
+    2                    GND
+=== C32  [2.2nF]  Capacitor_SMD:C_0603_1608Metric
+    1                    Net-(C23-Pad2)
+    2                    GND
+=== C33  [2.2nF]  Capacitor_SMD:C_0603_1608Metric
+    1                    Net-(C33-Pad1)
+    2                    GND
+=== C34  [1uF]  Capacitor_SMD:C_0603_1608Metric
+    1                    +3V3
+    2                    GND
+=== C35  [1uF]  Capacitor_SMD:C_0603_1608Metric
+    1                    +3V3
+    2                    GND
+=== C36  [1uF]  Capacitor_SMD:C_0603_1608Metric
+    1                    Net-(U11-INR-)
+    2                    Net-(C33-Pad1)
+=== C37  [2.2uF]  Capacitor_SMD:C_0603_1608Metric
+    1                    Net-(U11-HPVSS)
+    2                    GND
+=== C38  [1uF]  Capacitor_SMD:C_0603_1608Metric
+    1                    Net-(U11-CPP)
+    2                    Net-(U11-CPN)
+=== C39  [0.1uF]  Capacitor_SMD:C_0603_1608Metric
+    1                    BAT-
+    2                    Net-(U10-VCC)
+=== C40  [1uF]  Capacitor_SMD:C_0603_1608Metric
+    1                    Net-(U11-INL+)
+    2                    GND
+=== C41  [1uF]  Capacitor_SMD:C_0603_1608Metric
+    1                    Net-(U11-INR+)
+    2                    GND
+=== C42  [1uF]  Capacitor_SMD:C_0603_1608Metric
+    1                    +3V3
+    2                    GND
+=== C43  [10uF]  Capacitor_SMD:C_0805_2012Metric
+    1                    USB_5V
+    2                    GND
+=== C44  [2.2uF]  Capacitor_SMD:C_0603_1608Metric
+    1                    Net-(U11-HPVDD)
+    2                    GND
+=== C45  [10uF]  Capacitor_SMD:C_0805_2012Metric
+    1                    GND
+    2                    Net-(U11-VDD)
+=== C46  [10uF]  Capacitor_SMD:C_0805_2012Metric
+    1                    GND
+    2                    +3V3
+=== C47  [0.1uF]  Capacitor_SMD:C_0603_1608Metric
+    1                    GND
+    2                    +3V3
+=== C49  [1uF]  Capacitor_SMD:C_0603_1608Metric
+    1                    DRV_REG
+    2                    GND
+=== C50  [100nF]  Capacitor_SMD:C_0603_1608Metric
+    1                    +3V3
+    2                    GND
+=== C51  [10uF]  Capacitor_SMD:C_0805_2012Metric
+    1                    +3V3
+    2                    GND
+=== C52  [100nF]  Capacitor_SMD:C_0603_1608Metric
+    1                    +3V3
+    2                    GND
+=== C53  [100nF]  Capacitor_SMD:C_0603_1608Metric
+    1                    +3V3
+    2                    GND
+=== C54  [100nF]  Capacitor_SMD:C_0603_1608Metric
+    1                    +3V3
+    2                    GND
+=== C55  [1uF]  Capacitor_SMD:C_0603_1608Metric
+    1                    +3V3
+    2                    GND
+=== C56  [100nF]  Capacitor_SMD:C_0603_1608Metric
+    1                    +3V3
+    2                    GND
+=== C57  [100nF]  Capacitor_SMD:C_0603_1608Metric
+    1                    +3V3
+    2                    GND
+=== C58  [10uF]  Capacitor_SMD:C_0805_2012Metric
+    1                    +1V1
+    2                    GND
+=== C59  [1uF]  Capacitor_SMD:C_0603_1608Metric
+    1                    +1V1
+    2                    GND
+=== C60  [4.7uF]  Capacitor_SMD:C_0603_1608Metric
+    1                    Net-(U16-VREG_AVDD)
+    2                    GND
+=== C61  [15pF]  Capacitor_SMD:C_0603_1608Metric
+    1                    Net-(U16-XIN)
+    2                    GND
+=== C62  [15pF]  Capacitor_SMD:C_0603_1608Metric
+    1                    Net-(C62-Pad1)
+    2                    GND
+=== C63  [1uF]  Capacitor_SMD:C_0603_1608Metric
+    1                    GND
+    2                    +3V3
+=== C64  [22uF]  Capacitor_SMD:C_0805_2012Metric
+    1                    GND
+    2                    +3V3
+=== C65  [100nF]  Capacitor_SMD:C_0603_1608Metric
+    1                    GND
+    2                    +3V3
+=== C66  [22uF]  Capacitor_SMD:C_0805_2012Metric
+    1                    VSYS
+    2                    GND
+=== C67  [10uF]  Capacitor_SMD:C_0805_2012Metric
+    1                    BAT+
+    2                    GND
+=== C68  [100nF]  Capacitor_SMD:C_0603_1608Metric
+    1                    TEMP_SENSE
+    2                    GND
+=== C69  [15pF]  Capacitor_SMD:C_0603_1608Metric
+    1                    RTC_OSCI
+    2                    GND
+=== C70  [15pF]  Capacitor_SMD:C_0603_1608Metric
+    1                    RTC_OSCO
+    2                    GND
+=== C71  [100nF]  Capacitor_SMD:C_0603_1608Metric
+    1                    RTC_VDD
+    2                    GND
+=== C72  [100nF]  Capacitor_SMD:C_0603_1608Metric
+    1                    +3V3
+    2                    GND
+=== C73  [1uF]  Capacitor_SMD:C_0603_1608Metric
+    1                    +3V3
+    2                    GND
+=== CN1  [PJ-342]  lcsc_footprints:C668606_AUDIO-SMD_PJ-342_C668606
+    2 2_2                GND
+    3 3_3                TPA6132_OUT_R
+    4 4_4                unconnected-(CN1-Pad4)
+    5 5_5                GND
+    6 6_6                TPA6132_OUT_L
+    7 7_7                unconnected-(CN1-Pad7)
+=== CN2  [BAT_JST]  lcsc_footprints:C295747_CONN-SMD_P2_00_S2B-PH-SM4-TB-LF-SN
+    1 1_1                BAT+
+    2 2_2                BAT-
+    3 3_3                unconnected-(CN2-Pad3)
+    4 4_4                unconnected-(CN2-Pad4)
+=== Card1  [TF-01A]  lcsc_footprints:C91145_TF-SMD_TF-01A
+    1 DAT2(RSV)_1        RP2354_GPIO14
+    2 CDDAT3(CS)_2       RP2354_GPIO15
+    3 CMD(DI)_3          RP2354_GPIO39
+    4 VDD_4              +3V3
+    5 CLK(SCLK)_5        RP2354_GPIO41
+    6 VSS_6              GND
+    7 DAT0(D0)_7         RP2354_GPIO12
+    8 DAT1(RSV)_8        RP2354_GPIO13
+    9 CD_9               unconnected-(Card1-CD-Pad9)
+   10 GND_10             GND
+   11 GND_11             GND
+   12 GND_12             GND
+   13 GND_13             GND
+=== D1  [B5819WS SL]  lcsc_shared_footprints:C22624_SOD-323_L1_8-W1_3-LS2_5-RD
+    1 K_1                VSYS
+    2 A_2                USB_5V
+=== D3  [BAT54C]  lcsc_shared_footprints:C2135_SOT-23-3_L2_9-W1_6-P1_90-LS2_8-BR
+    1 A1_1               +3V3
+    2 A2_2               VBAT_CELL
+    3 K_3                RTC_VDD
+=== F3  [1.10A]  lcsc_footprints:C20801_F1206
+    1 1_1                Net-(U3-VBUS)
+    2 2_2                USB_5V
+=== J1  [OLED_I2C]  Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical
+    1 Pin_1_1            GND
+    2 Pin_2_2            +3V3
+    3 Pin_3_3            RP2354_GPIO17
+    4 Pin_4_4            RP2354_GPIO16
+=== J2  [THERMISTOR]  Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical
+    1 Pin_1_1            TEMP_SENSE
+    2 Pin_2_2            GND
+=== J3  [RP2354_DEBUG]  Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical
+    1 Pin_1_1            GND
+    2 Pin_2_2            Net-(J3-Pin_2)
+    3 Pin_3_3            Net-(J3-Pin_3)
+=== J4  [HAPTIC_+-]  Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical
+    1 Pin_1_1            HAPTIC_A
+    2 Pin_2_2            HAPTIC_B
+=== L5  [HCB1005KF-121T20]  lcsc_footprints:C141722_L0402
+    1 1_1                AUDIO_3V3
+    2 2_2                Net-(U6-AVDD)
+=== L6  [HCB1005KF-121T20]  lcsc_footprints:C141722_L0402
+    1 1_1                AUDIO_3V3
+    2 2_2                Net-(U6-CPVDD)
+=== L7  [HCB1005KF-121T20]  lcsc_footprints:C141722_L0402
+    1 1_1                Net-(U6-DVDD)
+    2 2_2                AUDIO_3V3
+=== L8  [HCB1005KF-121T20]  lcsc_footprints:C141722_L0402
+    1 1_1                Net-(U11-VDD)
+    2 2_2                AUDIO_3V3
+=== L10  [AOTA-B201610S3R3-101-T]  lcsc_footprints:C42411119_IND-SMD_L2_0-W1_6_AOTA-B201610S3R3-101-T
+    1 1_1                +1V1
+    2 2_2                Net-(U16-VREG_LX)
+=== Q1  [FS8205A_C908265]  lcsc_footprints:C908265_SOT-23-6_L2_9-W1_6-P0_95-LS2_8-BR
+    1 S1_1               BAT-
+    2 D1/D2_2            Net-(Q1-D1{slash}D2-Pad2)
+    3 S2_3               GND
+    4 G2_4               Net-(Q1-G2)
+    5 D1/D2_5            Net-(Q1-D1{slash}D2-Pad2)
+    6 G1_6               Net-(Q1-G1)
+=== Q2  [AO3400A]  lcsc_shared_footprints:C20917_SOT-23-3_L2_9-W1_3-P1_90-LS2_4-BR
+    1 G_1                RP2354_GPIO6
+    2 S_2                GND
+    3 D_3                Net-(Q2-D)
+=== Q4  [AO3401A]  lcsc_footprints:C15127_SOT-23_L2_9-W1_3-P1_90-LS2_4-BR
+    1 G_1                VSYS_G
+    2 S_2                VSYS
+    3 D_3                BAT+
+=== Q5  [AO3400A]  lcsc_shared_footprints:C20917_SOT-23-3_L2_9-W1_3-P1_90-LS2_4-BR
+    1 G_1                CHARGE_CTL
+    2 S_2                GND
+    3 D_3                CHARGE_EN
+=== R3  [5.1kR]  Resistor_SMD:R_0603_1608Metric
+    1                    Net-(USB2-CC1)
+    2                    GND
+=== R4  [5.1kR]  Resistor_SMD:R_0603_1608Metric
+    1                    Net-(USB2-CC2)
+    2                    GND
+=== R5  [2.4kR]  Resistor_SMD:R_0603_1608Metric
+    1                    GND
+    2                    Net-(U2-PROG)
+=== R6  [10kR]  Resistor_SMD:R_0603_1608Metric
+    1                    +3V3
+    2                    RP2354_GPIO39
+=== R7  [10kR]  Resistor_SMD:R_0603_1608Metric
+    1                    RP2354_GPIO12
+    2                    +3V3
+=== R8  [10kR]  Resistor_SMD:R_0603_1608Metric
+    1                    RP2354_GPIO13
+    2                    +3V3
+=== R9  [10kR]  Resistor_SMD:R_0603_1608Metric
+    1                    RP2354_GPIO14
+    2                    +3V3
+=== R10  [100kR]  Resistor_SMD:R_0603_1608Metric
+    1                    GND
+    2                    LDO_ENABLE
+=== R11  [470R]  Resistor_SMD:R_0603_1608Metric
+    1                    Net-(C23-Pad2)
+    2                    PCM5102_OUTL
+=== R12  [4.7kR]  Resistor_SMD:R_0603_1608Metric
+    1                    +3V3
+    2                    RP2354_GPIO16
+=== R13  [10kR]  Resistor_SMD:R_0603_1608Metric
+    1                    RP2354_GPIO18
+    2                    +3V3
+=== R14  [27R]  Resistor_SMD:R_0603_1608Metric
+    1                    RP2354_D-
+    2                    /USB_DN
+=== R15  [10kR]  Resistor_SMD:R_0603_1608Metric
+    1                    RP2354_GPIO15
+    2                    +3V3
+=== R17  [470R]  Resistor_SMD:R_0603_1608Metric
+    1                    Net-(C33-Pad1)
+    2                    PCM5102_OUTR
+=== R18  [10kR]  Resistor_SMD:R_0603_1608Metric
+    1                    BTN_LEFT
+    2                    +3V3
+=== R19  [10kR]  Resistor_SMD:R_0603_1608Metric
+    1                    BTN_UP
+    2                    +3V3
+=== R20  [27R]  Resistor_SMD:R_0603_1608Metric
+    1                    RP2354_D+
+    2                    /USB_DP
+=== R21  [10kR]  Resistor_SMD:R_0603_1608Metric
+    1                    BTN_RIGHT
+    2                    +3V3
+=== R23  [1kR]  Resistor_SMD:R_0603_1608Metric
+    1                    Net-(C62-Pad1)
+    2                    Net-(U16-XOUT)
+=== R24  [220kR]  Resistor_SMD:R_0603_1608Metric
+    1                    BAT+
+    2                    RP2354_GPIO40
+=== R25  [4.7kR]  Resistor_SMD:R_0603_1608Metric
+    1                    +3V3
+    2                    RP2354_GPIO17
+=== R26  [1kR]  Resistor_SMD:R_0603_1608Metric
+    1                    Net-(U10-VM)
+    2                    GND
+=== R27  [100R]  Resistor_SMD:R_0603_1608Metric
+    1                    Net-(U10-VCC)
+    2                    BAT+
+=== R28  [100kR]  Resistor_SMD:R_0603_1608Metric
+    1                    RP2354_GPIO40
+    2                    GND
+=== R33  [10kR]  Resistor_SMD:R_0603_1608Metric
+    1                    GND
+    2                    RP2354_GPIO42
+=== R34  [10kR]  Resistor_SMD:R_0603_1608Metric
+    1                    GND
+    2                    RP2354_GPIO43
+=== R35  [3.3R]  Resistor_SMD:R_0603_1608Metric
+    1                    Net-(Q2-D)
+    2                    LCD_LEDK
+=== R36  [10kR]  Resistor_SMD:R_0603_1608Metric
+    1                    GND
+    2                    RP2354_GPIO6
+=== R37  [10kR]  Resistor_SMD:R_0603_1608Metric
+    1                    BTN_DOWN
+    2                    +3V3
+=== R38  [10k]  Resistor_SMD:R_0603_1608Metric
+    1                    +3V3
+    2                    BTN_INT
+=== R39  [10k]  Resistor_SMD:R_0603_1608Metric
+    1                    +3V3
+    2                    XIP_CS1n
+=== R40  [10kR]  Resistor_SMD:R_0603_1608Metric
+    1                    +3V3
+    2                    Net-(U16-RUN)
+=== R41  [33R]  Resistor_SMD:R_0603_1608Metric
+    1                    +3V3
+    2                    Net-(U16-VREG_AVDD)
+=== R42  [1kR]  Resistor_SMD:R_0603_1608Metric
+    1                    Net-(R42-Pad1)
+    2                    RP2350_QSPI_SS
+=== R43  [100kR]  Resistor_SMD:R_0603_1608Metric
+    1                    GND
+    2                    RP2354_GPIO1
+=== R44  [100R]  Resistor_SMD:R_0603_1608Metric
+    1                    VSYS_G
+    2                    USB_5V
+=== R45  [100kR]  Resistor_SMD:R_0603_1608Metric
+    1                    GND
+    2                    VSYS_G
+=== R46  [10kR]  Resistor_SMD:R_0603_1608Metric
+    1                    TEMP_SENSE
+    2                    +3V3
+=== R47  [10kR]  Resistor_SMD:R_0603_1608Metric
+    1                    CHARGE_EN
+    2                    USB_5V
+=== R48  [100kR]  Resistor_SMD:R_0603_1608Metric
+    1                    GND
+    2                    CHARGE_CTL
+=== R49  [10kR]  Resistor_SMD:R_0603_1608Metric
+    1                    CHARGE_STAT
+    2                    +3V3
+=== SW3  [EVQP1Y05M]  lcsc_footprints:C2915186_SW-SMD_4P-L6_1-W6_0-P4_50-LS7_4
+    1 1_1                BTN_UP
+    2 2_2                GND
+    3 3_3                unconnected-(SW3-Pad3)
+    4 4_4                unconnected-(SW3-Pad4)
+=== SW4  [EVQP1Y05M]  lcsc_footprints:C2915186_SW-SMD_4P-L6_1-W6_0-P4_50-LS7_4
+    1 1_1                BTN_DOWN
+    2 2_2                GND
+    3 3_3                unconnected-(SW4-Pad3)
+    4 4_4                unconnected-(SW4-Pad4)
+=== SW5  [MK-12C02-G020]  lcsc_footprints:C963206_SW-SMD_MK-12C02-G020
+    1 1_1                GND
+    2 2_2                LDO_ENABLE
+    3 3_3                VSYS
+    4 4_4                GND
+    5 5_5                GND
+    6 6_6                GND
+    7 7_7                GND
+=== SW6  [EVQP1Y05M]  lcsc_footprints:C2915186_SW-SMD_4P-L6_1-W6_0-P4_50-LS7_4
+    1 1_1                BTN_LEFT
+    2 2_2                GND
+    3 3_3                unconnected-(SW6-Pad3)
+    4 4_4                unconnected-(SW6-Pad4)
+=== SW7  [EVQP1Y05M]  lcsc_footprints:C2915186_SW-SMD_4P-L6_1-W6_0-P4_50-LS7_4
+    1 1_1                BTN_RIGHT
+    2 2_2                GND
+    3 3_3                unconnected-(SW7-Pad3)
+    4 4_4                unconnected-(SW7-Pad4)
+=== SW8  [EVQP1Y05M]  lcsc_footprints:C2915186_SW-SMD_4P-L6_1-W6_0-P4_50-LS7_4
+    1 1_1                BTN_A
+    2 2_2                GND
+    3 3_3                unconnected-(SW8-Pad3)
+    4 4_4                unconnected-(SW8-Pad4)
+=== SW10  [EVQP1Y05M]  lcsc_footprints:C2915186_SW-SMD_4P-L6_1-W6_0-P4_50-LS7_4
+    1 1_1                BTN_B
+    2 2_2                GND
+    3 3_3                unconnected-(SW10-Pad3)
+    4 4_4                unconnected-(SW10-Pad4)
+=== SW11  [RP2354_RESET]  lcsc_footprints:C72443_KEY-SMD_KMR2XXGXXX
+    1 1_1                unconnected-(SW11-Pad1)
+    2 2_2                Net-(U16-RUN)
+    3 3_3                unconnected-(SW11-Pad3)
+    4 4_4                GND
+    5 5_5                unconnected-(SW11-Pad5)
+=== SW12  [RP2354_BOOTSEL]  lcsc_footprints:C72443_KEY-SMD_KMR2XXGXXX
+    1 1_1                unconnected-(SW12-Pad1)
+    2 2_2                Net-(R42-Pad1)
+    3 3_3                unconnected-(SW12-Pad3)
+    4 4_4                GND
+    5 5_5                unconnected-(SW12-Pad5)
+=== U1  [APS6404L-3SQR-SN_C5333729]  lcsc_shared_footprints:C5333729_SOIC-8_L4_9-W3_9-P1_27-LS6_0-BL
+    1 CE#_1              XIP_CS1n
+    2 SO/SIO[1]_2        RP2350_QSPI_SD1
+    3 SIO[2]_3           RP2350_QSPI_SD2
+    4 VSS_4              GND
+    5 SI/SIO[0]_5        RP2350_QSPI_SD0
+    6 SCLK_6             RP2350_QSPI_SCLK
+    7 SIO[3]_7           RP2350_QSPI_SD3
+    8 VDD_8              +3V3
+=== U2  [TP4056_C382139]  lcsc_footprints:C382139_ESOP-8_L4_9-W3_9-P1_27-LS6_0-BL-EP
+    1 TEMP_1             GND
+    2 PROG_2             Net-(U2-PROG)
+    3 GND_3              GND
+    4 VCC_4              USB_5V
+    5 BAT_5              BAT+
+    6 STDBY#_6           CHARGE_STAT
+    7 CHRG#_7            RP2354_GPIO18
+    8 CE_8               CHARGE_EN
+    9 EP_9               GND
+=== U3  [USBLC6-2P6]  Package_TO_SOT_SMD:SOT-666
+    1 I/O1_1             RP2354_D-
+    2 GND_2              GND
+    3 I/O2_3             RP2354_D+
+    4 I/O2_4             RP2354_D+
+    5 VBUS_5             Net-(U3-VBUS)
+    6 I/O1_6             RP2354_D-
+=== U4  [AP2112K-3.3TRG1]  lcsc_footprints:C51118_SOT-25-5_L2_9-W1_6-P0_95-LS2_8-BL
+    1 VIN_1              VSYS
+    2 GND_2              GND
+    3 EN_3               LDO_ENABLE
+    4 NC_4               unconnected-(U4-NC-Pad4)
+    5 VOUT_5             +3V3
+=== U5  [TPS7A2033PDBVR]  lcsc_footprints:C2862740_SOT-23-5_L2_9-W1_6-P0_95-LS2_8-BR
+    1 IN_1               VSYS
+    2 GND_2              GND
+    3 EN_3               LDO_ENABLE
+    4 NC_4               unconnected-(U5-NC-Pad4)
+    5 OUT_5              AUDIO_3V3
+=== U6  [PCM5102APWR]  lcsc_footprints:C107671_TSSOP-20_L6_5-W4_4-P0_65-LS6_4-BL
+    1 CPVDD_1            Net-(U6-CPVDD)
+    2 CAPP_2             Net-(U6-CAPP)
+    3 CPGND_3            GND
+    4 CAPM_4             Net-(U6-CAPM)
+    5 VNEG_5             Net-(U6-VNEG)
+    6 OUTL_6             PCM5102_OUTL
+    7 OUTR_7             PCM5102_OUTR
+    8 AVDD_8             Net-(U6-AVDD)
+    9 AGND_9             GND
+   10 DEMP_10            GND
+   11 FLT_11             GND
+   12 SCK_12             GND
+   13 BCK_13             RP2354_GPIO3
+   14 DIN_14             RP2354_GPIO2
+   15 LRCK_15            RP2354_GPIO4
+   16 FMT_16             GND
+   17 XSMT_17            RP2354_GPIO42
+   18 LDOO_18            Net-(U6-LDOO)
+   19 DGND_19            GND
+   20 DVDD_20            Net-(U6-DVDD)
+=== U7  [DRV2605LDGSR]  lcsc_shared_footprints:C527464_VSSOP-10_L3_0-W3_0-P0_50-LS4_9-BL
+    1 REG_1              DRV_REG
+    2 SCL_2              RP2354_GPIO17
+    3 SDA_3              RP2354_GPIO16
+    4 IN/TRIG_4          RP2354_GPIO5
+    5 EN_5               RP2354_GPIO1
+    6 VDD/NC_6           +3V3
+    7 OUT+_7             HAPTIC_A
+    8 GND_8              GND
+    9 OUT-_9             HAPTIC_B
+   10 VDD_10             +3V3
+=== U8  [LSM6DSOETR3]  lcsc_shared_footprints:C5122483_LGA-14L_L3_0-W2_5-P0_50-TL
+    1 SDO/SA0_1          GND
+    2 SDX_2              GND
+    3 SCX_3              GND
+    4 INT1_4             RP2354_GPIO19
+    5 VDDIO_5            +3V3
+    6 GND_6              GND
+    7 GND_7              GND
+    8 VDD_8              +3V3
+    9 INT2_9             unconnected-(U8-INT2-Pad9)
+   10 OCS_AUX_10         unconnected-(U8-OCS_AUX-Pad10)
+   11 SDO_AUX_11         unconnected-(U8-SDO_AUX-Pad11)
+   12 CS_12              +3V3
+   13 SCL_13             RP2354_GPIO17
+   14 SDA_14             RP2354_GPIO16
+=== U9  [KH-FG0.5-H2.0-14P-SMT]  lcsc_shared_footprints:C5441651_FPC-SMD_14P-P0_50_KINGHELM_KH-FG0_5-H2_0-14P-SMT
+    1 1_1                GND
+    2 2_2                RP2354_GPIO7
+    3 3_3                RP2354_GPIO10
+    4 4_4                RP2354_GPIO8
+    5 5_5                RP2354_GPIO9
+    6 6_6                RP2354_GPIO11
+    7 7_7                unconnected-(U9-Pad7)
+    8 8_8                GND
+    9 9_9                +3V3
+   10 10_10              LCD_LEDK
+   11 11_11              GND
+   12 12_12              GND
+   13 13_13              unconnected-(U9-Pad13)
+   14 14_14              unconnected-(U9-Pad14)
+   15 15_15              GND
+   16 16_16              GND
+=== U10  [DW01A_C351410]  lcsc_footprints:C351410_SOT-23-6_L2_9-W1_6-P0_95-LS2_8-BL
+    1 OD_1               Net-(Q1-G1)
+    2 VM_2               Net-(U10-VM)
+    3 OC_3               Net-(Q1-G2)
+    4 TD_4               unconnected-(U10-TD-Pad4)
+    5 VCC_5              Net-(U10-VCC)
+    6 GND_6              BAT-
+=== U11  [TPA6132A2RTER]  lcsc_footprints:C69901_WQFN-16_L3_0-W3_0-P0_50-TL-EP1_6
+    1 INL-_1             Net-(U11-INL-)
+    2 INL+_2             Net-(U11-INL+)
+    3 INR+_3             Net-(U11-INR+)
+    4 INR-_4             Net-(U11-INR-)
+    5 OUTR_5             TPA6132_OUT_R
+    6 G0_6               GND
+    7 G1_7               GND
+    8 HPVSS_8            Net-(U11-HPVSS)
+    9 CPN_9              Net-(U11-CPN)
+   10 PGND_10            GND
+   11 CPP_11             Net-(U11-CPP)
+   12 HPVDD_12           Net-(U11-HPVDD)
+   13 EN_13              RP2354_GPIO43
+   14 VDD_14             Net-(U11-VDD)
+   15 SGND_15            GND
+   16 OUTL_16            TPA6132_OUT_L
+   17 EP_17              GND
+=== U12  [AS5600-ASOT]  lcsc_shared_footprints:C499458_SOIC-8_L5_0-W4_0-P1_27-LS6_0-BL
+    1 VDD5V_1            +3V3
+    2 VDD3V3_2           +3V3
+    3 OUT_3              unconnected-(U12-OUT-Pad3)
+    4 GND_4              GND
+    5 PGO_5              unconnected-(U12-PGO-Pad5)
+    6 SDA_6              RP2354_GPIO16
+    7 SCL_7              RP2354_GPIO17
+    8 DIR_8              GND
+=== U13  [PCF8563TS/5,118]  lcsc_shared_footprints:C27397_TSSOP-8_L3_0-W3_0-P0_65-LS4_9-BL
+    1 OSCI_1             RTC_OSCI
+    2 OSCO_2             RTC_OSCO
+    3 INT#_3             unconnected-(U13-INT#-Pad3)
+    4 VSS_4              GND
+    5 SDA_5              RP2354_GPIO16
+    6 SCL_6              RP2354_GPIO17
+    7 CLKOUT_7           unconnected-(U13-CLKOUT-Pad7)
+    8 VDD_8              RTC_VDD
+=== U14  [TCA9554PWR]  lcsc_shared_footprints:C477924_TSSOP-16_L5_0-W4_4-P0_65-LS6_4-TL
+    1 AO_1               GND
+    2 A1_2               GND
+    3 A2_3               GND
+    4 PO_4               BTN_UP
+    5 P1_5               BTN_DOWN
+    6 P2_6               BTN_LEFT
+    7 P3_7               BTN_RIGHT
+    8 GND_8              GND
+    9 P4_9               BTN_A
+   10 P5_10              BTN_B
+   11 P6_11              unconnected-(U14-P6-Pad11)
+   12 P7_12              unconnected-(U14-P7-Pad12)
+   13 #INT_13            BTN_INT
+   14 SCL_14             RP2354_GPIO17
+   15 SDA_15             RP2354_GPIO16
+   16 VCC_16             +3V3
+=== U15  [ICS-43434_C5656610]  lcsc_shared_footprints:C5656610_MIC-SMD_6P-L3_5-W2_7-P0_90-BL
+    1 WS_1               MIC_WS
+    2 LR_2               GND
+    3 GND_3              GND
+    4 SCK_4              MIC_BCLK
+    5 VDD_5              +3V3
+    6 SD_6               MIC_DATA
+=== U16  [RP2350B_C42415655]  lcsc_shared_footprints:C42415655_QFN-80_L10_0-W10_0-P0_40-TL-EP3_4
+    1 GPIO4_1            RP2354_GPIO4
+    2 GPIO5_2            RP2354_GPIO5
+    3 GPIO6_3            RP2354_GPIO6
+    4 GPIO7_4            RP2354_GPIO7
+    5 IOVDD_5            +3V3
+    6 GPIO8_6            RP2354_GPIO8
+    7 GPIO9_7            RP2354_GPIO9
+    8 GPIO10_8           RP2354_GPIO10
+    9 GPIO11_9           RP2354_GPIO11
+   10 DVDD_10            +1V1
+   11 GPIO12_11          RP2354_GPIO12
+   12 GPIO13_12          RP2354_GPIO13
+   13 GPIO14_13          RP2354_GPIO14
+   14 GPIO15_14          RP2354_GPIO15
+   15 IOVDD_15           +3V3
+   16 GPIO16_16          RP2354_GPIO16
+   17 GPIO17_17          RP2354_GPIO17
+   18 GPIO18_18          RP2354_GPIO18
+   19 GPIO19_19          RP2354_GPIO19
+   20 GPIO20_20          BTN_INT
+   21 GPIO21_21          CHARGE_CTL
+   22 GPIO22_22          CHARGE_STAT
+   23 GPIO23_23          MIC_BCLK
+   24 IOVDD_24           +3V3
+   25 GPIO24_25          MIC_WS
+   26 GPIO25_26          MIC_DATA
+   27 GPIO26_27          unconnected-(U16-GPIO26-Pad27)
+   28 GPIO27_28          unconnected-(U16-GPIO27-Pad28)
+   29 IOVDD_29           +3V3
+   30 XIN_30             Net-(U16-XIN)
+   31 XOUT_31            Net-(U16-XOUT)
+   32 DVDD_32            +1V1
+   33 SWCLK_33           Net-(J3-Pin_2)
+   34 SWDIO_34           Net-(J3-Pin_3)
+   35 RUN_35             Net-(U16-RUN)
+   36 GPIO28_36          unconnected-(U16-GPIO28-Pad36)
+   37 GPIO29_37          unconnected-(U16-GPIO29-Pad37)
+   38 GPIO30_38          unconnected-(U16-GPIO30-Pad38)
+   39 GPIO31_39          unconnected-(U16-GPIO31-Pad39)
+   40 GPIO32_40          unconnected-(U16-GPIO32-Pad40)
+   41 IOVDD_41           +3V3
+   42 GPIO33_42          unconnected-(U16-GPIO33-Pad42)
+   43 GPIO34_43          unconnected-(U16-GPIO34-Pad43)
+   44 GPIO35_44          unconnected-(U16-GPIO35-Pad44)
+   45 GPIO36_45          unconnected-(U16-GPIO36-Pad45)
+   46 GPIO37_46          unconnected-(U16-GPIO37-Pad46)
+   47 GPIO38_47          unconnected-(U16-GPIO38-Pad47)
+   48 GPIO39_48          RP2354_GPIO39
+   49 GPIO40_ADC0_49     RP2354_GPIO40
+   50 IOVDD_50           +3V3
+   51 DVDD_51            +1V1
+   52 GPIO41_ADC1_52     RP2354_GPIO41
+   53 GPIO42_ADC2_53     RP2354_GPIO42
+   54 GPIO43_ADC3_54     RP2354_GPIO43
+   55 GPIO44_ADC4_55     TEMP_SENSE
+   56 GPIO45_ADC5_56     unconnected-(U16-GPIO45_ADC5-Pad56)
+   57 GPIO46_ADC6_57     unconnected-(U16-GPIO46_ADC6-Pad57)
+   58 GPIO47_ADC7_58     unconnected-(U16-GPIO47_ADC7-Pad58)
+   59 ADC_AVDD_59        +3V3
+   60 IOVDD_60           +3V3
+   61 VREG_AVDD_61       Net-(U16-VREG_AVDD)
+   62 VREG_PGND_62       GND
+   63 VREG_LX_63         Net-(U16-VREG_LX)
+   64 VREG_VIN_64        +3V3
+   65 VREG_FB_65         +1V1
+   66 USB_DM_66          /USB_DN
+   67 USB_DP_67          /USB_DP
+   68 USB_OTP_VDD_68     +3V3
+   69 QSPI_IOVDD_69      +3V3
+   70 QSPI_SD3_70        RP2350_QSPI_SD3
+   71 QSPI_SCLK_71       RP2350_QSPI_SCLK
+   72 QSPI_SD0_72        RP2350_QSPI_SD0
+   73 QSPI_SD2_73        RP2350_QSPI_SD2
+   74 QSPI_SD1_74        RP2350_QSPI_SD1
+   75 QSPI_SS_75         RP2350_QSPI_SS
+   76 IOVDD_76           +3V3
+   77 GPIO0_77           XIP_CS1n
+   78 GPIO1_78           RP2354_GPIO1
+   79 GPIO2_79           RP2354_GPIO2
+   80 GPIO3_80           RP2354_GPIO3
+   81 GND_81             GND
+=== U17  [W25Q128JVSIQTR]  lcsc_shared_footprints:C97521_SOIC-8_L5_3-W5_3-P1_27-LS8_0-BL
+    1 CS#_1              RP2350_QSPI_SS
+    2 DO_2               RP2350_QSPI_SD1
+    3 IO2_3              RP2350_QSPI_SD2
+    4 GND_4              GND
+    5 DI_5               RP2350_QSPI_SD0
+    6 CLK_6              RP2350_QSPI_SCLK
+    7 IO3_7              RP2350_QSPI_SD3
+    8 VCC_8              +3V3
+=== U18  [ABM8-272-T3_C20625731]  lcsc_footprints:C20625731_CRYSTAL-SMD_4P-L3_2-W2_5-BL
+    1 1_1                Net-(U16-XIN)
+    2 GND_2              GND
+    3 3_3                Net-(C62-Pad1)
+    4 GND_4              GND
+=== U19  [KH-CR1220-2]  lcsc_shared_footprints:C5365933_BAT-SMD_CR1220-2
+    1 1_1                VBAT_CELL
+    2 2_2                GND
+=== USB2  [RP2354_USB_C]  lcsc_footprints:C2765186_USB-C-SMD_TYPE-C-16PIN-2MD-073
+   13 EH_13              GND
+   14 EH_14              GND
+  A1B12 GND_A1B12          GND
+  A4B9 VBUS_A4B9          Net-(U3-VBUS)
+   A5 CC1_A5             Net-(USB2-CC1)
+   A6 Dp1_A6             RP2354_D+
+   A7 Dn1_A7             RP2354_D-
+   A8 SBU1_A8            unconnected-(USB2-SBU1-PadA8)
+  B1A12 GND_B1A12          GND
+  B4A9 VBUS_B4A9          Net-(U3-VBUS)
+   B5 CC2_B5             Net-(USB2-CC2)
+   B6 Dp2_B6             RP2354_D+
+   B7 Dn2_B7             RP2354_D-
+   B8 SBU2_B8            unconnected-(USB2-SBU2-PadB8)
+=== Y2  [32.768kHz]  Crystal:Crystal_SMD_3215-2Pin_3.2x1.5mm
+    1 1_1                RTC_OSCI
+    2 2_2                RTC_OSCO

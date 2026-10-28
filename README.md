@@ -61,7 +61,7 @@ is put together, and what is still open**.
 
 > `main.kicad_pcb` currently contains **only the board outline** (Edge.Cuts, 100 × 64 mm,
 > 3 mm corner radius) plus the 4-layer stackup. It has no footprints, so the first
-> *Update PCB from Schematic* will drop in all 153 parts cleanly.
+> *Update PCB from Schematic* will drop in all 159 parts cleanly.
 
 ---
 
@@ -138,7 +138,7 @@ graph TD
 | MCU | **RP2350B** (QFN-80), LCSC `C42415655` | All GPIOs 0–47 available |
 | Program flash | **W25Q128JVSIQ** 128 Mbit (16 MB) QSPI, `U17` | Shares the QSPI bus |
 | PSRAM | **APS6404L-3SQR** 64 Mbit (8 MB) QSPI, `U1` | Chip-select on **GPIO0** (`XIP_CS1n`), separate from flash CS |
-| Crystal | **ABM8-272-T3**, `U18` | 15 pF load caps `C61`/`C62`, 1 kΩ series `R23` |
+| Crystal | **ABM8-272-T3** (12 MHz), `U18` | The Pico/Pico 2 crystal; 15 pF load caps `C61`/`C62`, 1 kΩ series `R23` |
 | Core supply | RP2350 internal buck | 3.3 µH `AOTA-B201610S3R3-101-T` (`L10`) → `+1V1`, `C58` 10 µF + `C59` 1 µF |
 | Regulator analog supply | `VREG_AVDD` | 33 Ω (`R41`) + 4.7 µF (`C60`), per the RP2350 reference design |
 
@@ -293,8 +293,8 @@ PWM slice drives the gate directly. Use 10–20 kHz; average LED current ≈ dut
 
 ```
 RP2350 I2S ──► PCM5102A (U6) ──470R──► TPA6132A2 (U11) ──► PJ-342 jack (CN1)
- BCK  GPIO2      2.1 Vrms line out      capless, charge pump      3.5 mm TRS
- DIN  GPIO3                             G0/G1 = 0 (0 dB)
+ BCK  GPIO3      2.1 Vrms line out      capless, charge pump      3.5 mm TRS
+ DIN  GPIO2                             G0/G1 = 0 (−6 dB)
  LRCK GPIO4
  XSMT GPIO42 (10k pull-down, starts muted)
  EN   GPIO43 (10k pull-down, starts off)
@@ -315,11 +315,12 @@ RP2350 I2S ──► PCM5102A (U6) ──470R──► TPA6132A2 (U11) ──►
 symbol has generic pin names — **confirm TIP/RING with a continuity test** on a real part.
 
 **Loudness:** comfortable. ~0.6 V<sub>rms</sub> into 16–32 Ω is ≈110–119 dB SPL on typical
-earbuds. The real risk is the opposite: the DAC's 2.1 V<sub>rms</sub> into a 0 dB amp will
-**clip** into 16–32 Ω, so cap digital volume around −10 dB.
+earbuds. At the fixed −6 dB gain the DAC's 2.1 V<sub>rms</sub> becomes ≈1.05 V<sub>rms</sub>,
+close to the TPA6132A2's maximum swing on a 3.3 V rail, so cap digital volume a few dB to
+avoid clipping into 16 Ω.
 
-**Gain:** `G0`/`G1` both strapped to GND (lowest setting). Verify against the TPA6132A2
-gain table if you change it.
+**Gain:** `G0`/`G1` both strapped to GND = **−6 dB** (lowest setting). Per the TPA6132A2
+table: `G0` high + `G1` low = 0 dB, `G0` low + `G1` high = +3 dB, both high = +6 dB.
 
 ---
 
@@ -333,7 +334,8 @@ gain table if you change it.
 | Local bulk | `C64` 22 µF at the driver (`+3V3`) |
 
 `EN` has a 100 kΩ pull-down (`R43`) so the driver stays off until firmware configures
-GPIO1. Drive voltage equals `+3V3`, so use a 2–3 V LRA or ERM; a 5 V ERM would need a
+GPIO1, and `IN/TRIG` has a 100 kΩ pull-down (`R53`) so a floating pin cannot trigger it at
+boot. Drive voltage equals `+3V3`, so use a 2–3 V LRA or ERM; a 5 V ERM would need a
 boost.
 
 ---
@@ -362,7 +364,8 @@ IMU, encoder, haptics, expander **and** the `J1` expansion header.
 | A | P4 | `BTN_A` |
 | B | P5 | `BTN_B` |
 
-`J1` ("OLED_I2C", 4-pin): `+3V3`, GND, SCL, SDA — a spare I²C port for a debug display.
+`J1` ("OLED_I2C", 4-pin): GND, `+3V3`, SCL, SDA (pins 1–4) — a spare I²C port for a
+debug display.
 
 ### 9.1 Real-time clock
 
@@ -371,7 +374,7 @@ IMU, encoder, haptics, expander **and** the `J1` expansion header.
 | Device | **PCF8563TS** (`U13`, TSSOP-8), I²C address `0x51` |
 | Timebase | `Y2` 32.768 kHz crystal, load caps `C69`/`C70` 15 pF |
 | Supply | `RTC_VDD` — diode-OR of `+3V3` and the backup cell |
-| Backup | `BT1` **CR1220 SMT holder** via `D3` BAT54C dual Schottky |
+| Backup | `U19` **KH-CR1220-2** CR1220 SMT holder (LCSC `C5365933`) via `D3` BAT54C dual Schottky |
 | Local decoupling | `C71` 100 nF at the supply pin |
 
 `D3` is wired as a diode-OR: anode 1 to `+3V3`, anode 2 to the cell, cathode to `RTC_VDD`.
@@ -391,6 +394,7 @@ push current back into the other, so the coin cell is never charged.
 | Bus | `MIC_BCLK` GPIO23, `MIC_WS` GPIO24, `MIC_DATA` GPIO25 |
 | Channel | `LR` tied to GND (left channel) |
 | Decoupling | `C72` 100 nF + `C73` 1 µF at the supply pin |
+| Data line | `R50` 100 kΩ pull-down on `MIC_DATA` (discharges the line when `SD` tristates) |
 
 The microphone has its **own** I²S pins rather than sharing the DAC's bus. That spends three
 GPIOs that were otherwise free, but capture and playback stay independent, so both can run
@@ -429,8 +433,8 @@ GPIO later — see [§14](#14-known-limitations--open-items)).
 |---|---|---|---|
 | 0 | 77 | PSRAM chip select | `XIP_CS1n` |
 | 1 | 78 | Haptics enable | `RP2354_GPIO1` → `U7.EN` |
-| 2 | 79 | I2S bit clock | `RP2354_GPIO2` → `U6.BCK` |
-| 3 | 80 | I2S data | `RP2354_GPIO3` → `U6.DIN` |
+| 2 | 79 | I2S data (DIN) | `RP2354_GPIO2` → `U6.DIN` |
+| 3 | 80 | I2S bit clock (BCK) | `RP2354_GPIO3` → `U6.BCK` |
 | 4 | 1 | I2S word clock | `RP2354_GPIO4` → `U6.LRCK` |
 | 5 | 2 | Haptic trigger | `RP2354_GPIO5` → `U7.IN/TRIG` |
 | 6 | 3 | **LCD backlight (PWM3A)** | `RP2354_GPIO6` |
@@ -560,15 +564,13 @@ has no over-temperature protection at all.**
 | **PCB** | Only the 100 × 64 mm outline exists; no placement or routing |
 | Single-sided | Plan stated as single-sided; check that the FPC connector, USB-C and SD socket are all back-side-accessible |
 | FPC contact side | `C5441651` is **bottom-contact**. Verify against the sample before ordering; alternatives: `C3249994` (double-sided), `C54928197` (top-contact) |
-| Jack L/R | `CN1.3`/`CN1.6` assumed R/L — confirm with continuity |
-| Crystal frequency | `U18` ABM8-272-T3 — **confirm it is the frequency the firmware assumes** (RP2350 USB boot expects 12 MHz) |
-| Charge current | 500 mA fixed. Confirm the chosen cell is ≥1000 mAh |
+| Jack L/R | `CN1.3`/`CN1.6` = R/L per the PJ-342 part list — confirm with a continuity test |
+| Charge current | 500 mA fixed (`R5` = 2.4 kΩ). With system load this can exceed a 500 mA USB-C source; use a ≥1 A charger, or lower `R5` / add a USB-C current-limit controller. Confirm the cell is ≥1000 mAh |
 | SD card detect | `Card1.9` unconnected |
 | Jack ESD | No protection on `OUT_L`/`OUT_R`. Consider series 33–68 Ω + TVS for a consumer product |
-| Audio clipping | Cap digital volume ≈ −10 dB at 0 dB amp gain |
-| **Backup cell footprint** | `BT1` has **no footprint assigned** — pick the CR1220 SMT holder |
-| **Sourcing** | No LCSC part numbers yet for `Y2` and `BT1` |
-| ERC | 34 pre-existing violations: unconnected GPIOs and power-flag warnings. None are electrical errors |
+| Audio clipping | Amp gain is −6 dB; still cap digital volume a few dB for 16 Ω loads |
+| **Sourcing** | No LCSC part number yet for `Y2` (32.768 kHz crystal); the coin-cell holder `U19` is `C5365933` |
+| ERC | 35 error-level violations (30 unconnected NC pins, 3 power-flag, 2 pin-type annotations); all intentional, no electrical faults. ~277 warnings with `--severity-all` |
 | Battery life | ~137 mA average at 3.3 V (screen ~40 % duty). 4–6 h needs ≈550–850 mAh of usable capacity; a 1500 mAh cell gives >9 h |
 
 ### 14.6 Layout checklist (carry into the PCB)
@@ -582,7 +584,7 @@ has no over-temperature protection at all.**
 - `J2`/`R46`/`C68` near the battery connector, with the NTC bonded to the cell.
 - `C63` (1 µF) at the display connector VDD.
 - `Y2` and its 15 pF load caps directly at `PCF8563` pins 1–2; keep those traces short and
-  clear of the SDIO clock and the QSPI bus. Keep `D3`/`C71`/`BT1` together at the RTC supply
+  clear of the SDIO clock and the QSPI bus. Keep `D3`/`C71`/`U19` together at the RTC supply
   pin, and keep the coin-cell holder away from the board edge.
 - Mount the MEMS mic with its acoustic port over an enclosure opening; keep `C72`/`C73`
   within a few millimetres of the supply pin and do not route signals beneath the port.
@@ -610,19 +612,17 @@ kicad-cli sch erc --severity-error --output erc.rpt main.kicad_sch
 
 | Check | Result |
 |---|---|
-| Netlist components | 153 |
-| BOM references | 153 (same count; three designators were renamed — see note below) |
+| Netlist components | 159 |
+| BOM references | 159 |
 | Nets | 164 |
 | Pins appearing in more than one net | 0 |
-| ERC | 34 violations, all pre-existing (unconnected GPIO / power flags) |
+| ERC (errors) | 35, all intentional (30 unconnected NC pins, 3 power-flag, 2 pin-type annotations) |
 
 Always confirm the BOM reference set matches the netlist after an edit — a silently
 dropped symbol is easy to miss otherwise (this has bitten the project once).
 
-> **Note:** `main.txt` and `main.csv` predate the most recent schematic edit, which
-> re-annotated the new parts (`U19` → `U13` RTC, `MK1` → `U15` microphone, `D2` → `D3`
-> backup diode) and swapped the generic RTC/mic symbols for the real parts. Regenerate both
-> before ordering or rebuilding the PDF.
+> **Note:** `main.txt` and `main.csv` are current with the schematic as of this revision
+> (both regenerated after the review changes in §17).
 
 Regenerate the documentation PDF after schematic changes (it embeds the BOM, the netlist
 statistics and a vector copy of the schematic):
@@ -644,8 +644,9 @@ will overwrite the change.
   in the `Datasheet` column of the schematic symbols and in `main.csv`).
 - `J4` (actuator) and `J2` (thermistor) may be fitted as headers or used as solder pads —
   mark `J2` DNP if the thermistor is soldered directly.
-- `BT1` (CR1220 holder) still needs a footprint and LCSC part number.
-- Tantalum 10 µF parts (`C13`, `C14`, `C17`, `C18`) are the audio-rail bulk caps.
+- `U19` (CR1220 holder) is `KH-CR1220-2`, LCSC `C5365933`.
+- Tantalum bulk caps: `C13`/`C17`/`C18` = 10 µF; `C14` = **1 µF** (PCM5102A `LDOO`; the
+  datasheet asks for 0.1 µF, which `C15` provides).
 - Two values are used inconsistently in the BOM for the same thing: `0.1uF` vs `100nF`, and
   `10k` vs `10kR`. Harmless, but tidy up before production.
 
@@ -655,7 +656,7 @@ will overwrite the change.
 
 | Change | Summary |
 |---|---|
-| RTC | Added `PCF8563TS` (`U13`) + `Y2` 32.768 kHz + `D3` BAT54C backup diode-OR, `BT1` CR1220 |
+| RTC | Added `PCF8563TS` (`U13`) + `Y2` 32.768 kHz + `D3` BAT54C backup diode-OR, `U19` CR1220 |
 | Microphone | Added ICS-43434 I²S MEMS mic (`U15`) on GPIO23/24/25 with `C72`/`C73` |
 | Haptics | Solder pads `H1`/`H2` replaced by 2-pin header `J4` |
 | Docs | Revision **B** PDF; repository reorganised into `docs/`, `fabrication/`, `backups/`, `tools/` |
@@ -668,3 +669,5 @@ will overwrite the change.
 | Charger | `STDBY#` → GPIO22 with `R49` pull-up |
 | Thermal | NTC moved off-board to `J2`; `R46` pull-up + `C68` filter → GPIO44 |
 | Haptics | `R43` 100 k pull-down added on `DRV2605.EN` |
+| I²S map | Corrected `BCK` = GPIO3, `DIN` = GPIO2 (matches the netlist) |
+| Review | Added `R50` 100 kΩ on `MIC_DATA`, `R51`/`R52` 10 kΩ on `BTN_A`/`BTN_B`, `R53` 100 kΩ on `DRV2605.IN/TRIG`, `R54`/`R55` 10 kΩ on LCD `CS`/`RESET`; `C14` reduced 10 µF → 1 µF |

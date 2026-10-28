@@ -2,7 +2,7 @@
 	(version "E")
 	(design
 		(source "C:\\Users\\mynam\\Documents\\projects\\solace\\main.kicad_sch")
-		(date "2026-10-28T02:30:43")
+		(date "2026-10-28T15:23:05")
 		(tool "Eeschema 10.0.0")
 		(sheet
 			(number "1")
@@ -11,12 +11,12 @@
 			(title_block
 				(title "solace main board")
 				(company)
-				(rev "A")
-				(date "2026-10-27")
+				(rev "B")
+				(date "2026-10-28")
 				(source "main.kicad_sch")
 				(comment
 					(number "1")
-					(value "RP2354A media player - PCM5102A + TPA6132A2 audio, SDIO microSD, 2.83in SPI LCD")
+					(value "RP2350B media player - PCM5102A + TPA6132A2 audio, SDIO microSD, 2.83in SPI LCD")
 				)
 				(comment
 					(number "2")
@@ -272,7 +272,7 @@
 		)
 		(comp
 			(ref "C14")
-			(value "10uF")
+			(value "1uF")
 			(footprint "Capacitor_Tantalum_SMD:CP_EIA-3216-18_Kemet-A")
 			(description "Polarized capacitor, small US symbol")
 			(fields
@@ -6841,6 +6841,330 @@
 			)
 		)
 		(comp
+			(ref "R50")
+			(value "100kR")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(description "Resistor, small US symbol")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor, small US symbol")
+			)
+			(libsource
+				(lib "Device")
+				(part "R_Small_US")
+				(description "Resistor, small US symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "main")
+			)
+			(property
+				(name "Sheetfile")
+				(value "main.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "r resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "405fb66b-5b00-4624-8626-40cfa2684da1")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R51")
+			(value "10kR")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(description "Resistor, small US symbol")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor, small US symbol")
+			)
+			(libsource
+				(lib "Device")
+				(part "R_Small_US")
+				(description "Resistor, small US symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "main")
+			)
+			(property
+				(name "Sheetfile")
+				(value "main.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "r resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "468df622-0078-420c-a9e4-4ec0401c897c")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R52")
+			(value "10kR")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(description "Resistor, small US symbol")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor, small US symbol")
+			)
+			(libsource
+				(lib "Device")
+				(part "R_Small_US")
+				(description "Resistor, small US symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "main")
+			)
+			(property
+				(name "Sheetfile")
+				(value "main.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "r resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "dcc269e0-f9d2-482e-a4f1-56a741eab8a3")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R53")
+			(value "100kR")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(description "Resistor, small US symbol")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor, small US symbol")
+			)
+			(libsource
+				(lib "Device")
+				(part "R_Small_US")
+				(description "Resistor, small US symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "main")
+			)
+			(property
+				(name "Sheetfile")
+				(value "main.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "r resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "7d11a602-2946-4d8d-8138-bbe4ee78596d")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R54")
+			(value "10kR")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(description "Resistor, small US symbol")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor, small US symbol")
+			)
+			(libsource
+				(lib "Device")
+				(part "R_Small_US")
+				(description "Resistor, small US symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "main")
+			)
+			(property
+				(name "Sheetfile")
+				(value "main.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "r resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "6845b1e2-711c-4df7-b1cd-d15cf774bfb0")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
+			(ref "R55")
+			(value "10kR")
+			(footprint "Resistor_SMD:R_0603_1608Metric")
+			(description "Resistor, small US symbol")
+			(fields
+				(field
+					(name "Footprint") "Resistor_SMD:R_0603_1608Metric")
+				(field
+					(name "Datasheet")
+				)
+				(field
+					(name "Description") "Resistor, small US symbol")
+			)
+			(libsource
+				(lib "Device")
+				(part "R_Small_US")
+				(description "Resistor, small US symbol")
+			)
+			(property
+				(name "Sheetname")
+				(value "main")
+			)
+			(property
+				(name "Sheetfile")
+				(value "main.kicad_sch")
+			)
+			(property
+				(name "ki_keywords")
+				(value "r resistor")
+			)
+			(property
+				(name "ki_fp_filters")
+				(value "R_*")
+			)
+			(sheetpath
+				(names "/")
+				(tstamps "/")
+			)
+			(tstamps "25473b11-9fae-4f49-806f-11a378134fed")
+			(units
+				(unit
+					(name "A")
+					(pins
+						(pin
+							(num "1")
+						)
+						(pin
+							(num "2")
+						)
+					)
+				)
+			)
+		)
+		(comp
 			(ref "SW3")
 			(value "EVQP1Y05M")
 			(footprint "lcsc_footprints:C2915186_SW-SMD_4P-L6_1-W6_0-P4_50-LS7_4")
@@ -12307,6 +12631,26 @@
 				(pintype "passive")
 			)
 			(node
+				(ref "R51")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R52")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R54")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
+				(ref "R55")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
 				(ref "R6")
 				(pin "1")
 				(pintype "passive")
@@ -12625,6 +12969,11 @@
 			(name "BTN_A")
 			(class "Default")
 			(node
+				(ref "R51")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
 				(ref "SW8")
 				(pin "1")
 				(pinfunction "1_1")
@@ -12641,6 +12990,11 @@
 			(code "9")
 			(name "BTN_B")
 			(class "Default")
+			(node
+				(ref "R52")
+				(pin "2")
+				(pintype "passive")
+			)
 			(node
 				(ref "SW10")
 				(pin "1")
@@ -13279,6 +13633,16 @@
 				(pintype "passive")
 			)
 			(node
+				(ref "R50")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
+				(ref "R53")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
 				(ref "SW10")
 				(pin "2")
 				(pinfunction "2_2")
@@ -13756,6 +14120,11 @@
 			(code "25")
 			(name "MIC_DATA")
 			(class "Default")
+			(node
+				(ref "R50")
+				(pin "1")
+				(pintype "passive")
+			)
 			(node
 				(ref "U15")
 				(pin "6")
@@ -14791,6 +15160,11 @@
 			(name "RP2354_GPIO5")
 			(class "Default")
 			(node
+				(ref "R53")
+				(pin "1")
+				(pintype "passive")
+			)
+			(node
 				(ref "U16")
 				(pin "2")
 				(pinfunction "GPIO5_2")
@@ -14830,6 +15204,11 @@
 			(name "RP2354_GPIO7")
 			(class "Default")
 			(node
+				(ref "R55")
+				(pin "2")
+				(pintype "passive")
+			)
+			(node
 				(ref "U16")
 				(pin "4")
 				(pinfunction "GPIO7_4")
@@ -14863,6 +15242,11 @@
 			(code "82")
 			(name "RP2354_GPIO9")
 			(class "Default")
+			(node
+				(ref "R54")
+				(pin "2")
+				(pintype "passive")
+			)
 			(node
 				(ref "U16")
 				(pin "7")
